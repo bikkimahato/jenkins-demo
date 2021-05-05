@@ -3,17 +3,16 @@ pipeline {
   stages {
     stage('Build') {
     steps {
-      echo "This is my first step"
-    }
-  }
-  stage('Test') {
-    steps{
-      echo "This is my Test step"
+      withMaven(maven : 'maven_3_8_1') {
+          sh 'mvn clean install'
+      }
     }
   }
   stage('Deploy') {
     steps {
-      echo "This is my Deploy step"
+      withMaven(maven : 'maven_3_5_0') {
+          sh 'mvn deploy'
+      }
     }
   }
   }
