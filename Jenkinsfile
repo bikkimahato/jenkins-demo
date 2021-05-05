@@ -1,22 +1,23 @@
 pipeline {
 
     agent any
-    tools {
-        maven 'Maven_3.8.1'
-    }
     stages {
-        stage('Compile stage') {
-            steps {
-                bat "mvn clean compile"
-        }
-    }
+            stage ('Compile Stage') {
 
-          stage('deployment stage') {
-              steps {
-                bat "mvn deploy"
-        }
-    }
+                steps {
+                    withMaven(maven : 'maven_3_8_1') {
+                        bat "mvn clean compile"
+                    }
+                }
+            }
 
-  }
+            stage ('Deployment Stage') {
+                steps {
+                    withMaven(maven : 'maven_3_5_0') {
+                        bat "mvn deploy"
+                    }
+                }
+            }
+        }
 
 }
