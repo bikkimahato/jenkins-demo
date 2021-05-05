@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class CalculatorController {
 
     @GetMapping("/add")
-    public String add(@RequestParam Integer a, @RequestParam Integer b){
+    public String add(@RequestParam Integer a, @RequestParam Integer b) {
         Integer c = a + b;
         return c.toString();
     }
