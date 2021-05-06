@@ -14,4 +14,9 @@ public class CalculatorController {
         Integer c = a + b;
         return c.toString();
     }
+    @GetMapping("/sub")
+    public String sub(@RequestParam Integer a, @RequestParam Integer b) {
+        Integer c = a - b;
+        return c.toString();
+    }
 }
