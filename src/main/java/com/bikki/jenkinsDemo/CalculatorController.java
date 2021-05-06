@@ -24,4 +24,9 @@ public class CalculatorController {
         Integer c = a * b;
         return c.toString();
     }
+    @GetMapping("/div")
+    public String div(@RequestParam Integer a, @RequestParam Integer b) {
+        Integer c = a / b;
+        return c.toString();
+    }
 }
