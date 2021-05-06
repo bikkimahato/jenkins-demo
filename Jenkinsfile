@@ -6,7 +6,7 @@ pipeline {
 
                 steps {
                    withMaven {
-                         sh "mvn clean verify"
+                         sh "mvn clean install"
                    }
                 }
             }
