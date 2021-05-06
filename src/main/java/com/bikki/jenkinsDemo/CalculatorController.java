@@ -19,4 +19,9 @@ public class CalculatorController {
         Integer c = a - b;
         return c.toString();
     }
+    @GetMapping("/mult")
+    public String mult(@RequestParam Integer a, @RequestParam Integer b) {
+        Integer c = a * b;
+        return c.toString();
+    }
 }
