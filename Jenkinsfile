@@ -6,7 +6,7 @@ pipeline {
 
                 steps {
                    withMaven {
-                         sh "mvn clean install"
+                         echo "building"
                    }
                 }
             }
@@ -14,7 +14,7 @@ pipeline {
             stage ('Deployment Stage') {
                 steps {
                     withMaven {
-                         sh "mvn deploy"
+                         echo "deploying"
                    }
                 }
             }
